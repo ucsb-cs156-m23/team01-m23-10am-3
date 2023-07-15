@@ -2,7 +2,6 @@ package edu.ucsb.cs156.spring.backenddemo.controllers;
 
 import org.springframework.web.bind.annotation.RestController;
 
-import edu.ucsb.cs156.spring.backenddemo.services.EarthquakeQueryService;
 import edu.ucsb.cs156.spring.backenddemo.services.TidesQueryService;
 import lombok.extern.slf4j.Slf4j;
 
@@ -32,7 +31,7 @@ public class TidesController {
 
     @Operation(summary = "Get water level for date range, in local time.", description = "For station id, see: https://tidesandcurrents.noaa.gov/tide_predictions.html?gid=1393")
     @GetMapping("/get")
-    public ResponseEntity<String> getTidResponseEntity(
+    public ResponseEntity<String> getTideResponseEntity(
         @Parameter(name="beginDate", description="beginDate in format yyyymmdd", example="20230710") @RequestParam String beginDate,
         @Parameter(name="endDate", description="endDate in format yyyymmdd", example="20230712") @RequestParam String endDate,
         @Parameter(name="station", description="station, e.g. 9411340 for Santa Barbara", example="9411340") @RequestParam String station

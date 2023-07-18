@@ -33,7 +33,7 @@ public class UniversityController {
 
     @Operation(summary="Get list of universities that match a given name", description ="Uses API documented here: http://universities.hipolabs.com/search")
     @GetMapping("/get")
-    public ResponseEntity<String> getCountryCodes(
+    public ResponseEntity<String> getUniversity(
         @Parameter(name="name", example="Harvard or Stanford") @RequestParam String name
     ) throws JsonProcessingException {
         log.info("getUniversity: name={}", name);

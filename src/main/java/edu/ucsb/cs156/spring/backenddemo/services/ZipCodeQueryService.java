@@ -18,7 +18,7 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 
-@Slf4j
+// @Slf4j
 @Service
 public class ZipCodeQueryService {
 
@@ -31,7 +31,8 @@ public class ZipCodeQueryService {
     public static final String ENDPOINT = "http://api.zippopotam.us/us/{zipcode}";
 
     public String getJSON(String zipcode) throws HttpClientErrorException {
-        log.info("zipcode={}", zipcode);
+        // log.info("zipcode={}", zipcode);
+
         HttpHeaders headers = new HttpHeaders();
         headers.setAccept(List.of(MediaType.APPLICATION_JSON));
         headers.setContentType(MediaType.APPLICATION_JSON);

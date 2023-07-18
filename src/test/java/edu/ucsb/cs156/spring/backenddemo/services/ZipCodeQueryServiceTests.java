@@ -23,7 +23,6 @@ public class ZipCodeQueryServiceTests {
 
     @Test
     public void test_getJSON() {
-
         String zipcode = "93106";
         String expectedURL = ZipCodeQueryService.ENDPOINT.replace("{zipcode}", zipcode);
 

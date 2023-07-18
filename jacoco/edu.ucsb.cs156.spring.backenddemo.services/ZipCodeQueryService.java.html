@@ -18,7 +18,7 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 
-<span class="fc" id="L21">@Slf4j</span>
+// @Slf4j
 @Service
 public class ZipCodeQueryService {
 
@@ -31,19 +31,20 @@ public class ZipCodeQueryService {
     public static final String ENDPOINT = &quot;http://api.zippopotam.us/us/{zipcode}&quot;;
 
     public String getJSON(String zipcode) throws HttpClientErrorException {
-<span class="fc" id="L34">        log.info(&quot;zipcode={}&quot;, zipcode);</span>
-<span class="fc" id="L35">        HttpHeaders headers = new HttpHeaders();</span>
-<span class="fc" id="L36">        headers.setAccept(List.of(MediaType.APPLICATION_JSON));</span>
-<span class="fc" id="L37">        headers.setContentType(MediaType.APPLICATION_JSON);</span>
+        // log.info(&quot;zipcode={}&quot;, zipcode);
 
-<span class="fc" id="L39">        Map&lt;String, String&gt; uriVariables = Map.of(&quot;zipcode&quot;, zipcode);</span>
+<span class="fc" id="L36">        HttpHeaders headers = new HttpHeaders();</span>
+<span class="fc" id="L37">        headers.setAccept(List.of(MediaType.APPLICATION_JSON));</span>
+<span class="fc" id="L38">        headers.setContentType(MediaType.APPLICATION_JSON);</span>
 
-<span class="fc" id="L41">        HttpEntity&lt;String&gt; entity = new HttpEntity&lt;&gt;(&quot;body&quot;, headers);</span>
+<span class="fc" id="L40">        Map&lt;String, String&gt; uriVariables = Map.of(&quot;zipcode&quot;, zipcode);</span>
 
-<span class="fc" id="L43">        ResponseEntity&lt;String&gt; re = restTemplate.exchange(ENDPOINT, HttpMethod.GET, entity, String.class,</span>
+<span class="fc" id="L42">        HttpEntity&lt;String&gt; entity = new HttpEntity&lt;&gt;(&quot;body&quot;, headers);</span>
+
+<span class="fc" id="L44">        ResponseEntity&lt;String&gt; re = restTemplate.exchange(ENDPOINT, HttpMethod.GET, entity, String.class,</span>
                 uriVariables);
 
-<span class="fc" id="L46">        return re.getBody();</span>
+<span class="fc" id="L47">        return re.getBody();</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
